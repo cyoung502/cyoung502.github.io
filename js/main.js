@@ -3,7 +3,7 @@ let city, weatherData;
 
 function getCity(callback){
 	$.ajax({
-		url: "http://ip-api.com/json",
+		url: "https://ipapi.co/jsonp",
 		dataType: "jsonp",
 		cache: false,
 		jsonpCallback: "callbackFunction",
