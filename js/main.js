@@ -37,6 +37,7 @@ function setStage(){
 }
 
 function setToday(){
+	let d = new Date();
 	document.getElementById("sunrise").innerHTML = w.weatherData.astronomy.sunrise;
 	document.getElementById("sunset").innerHTML = w.weatherData.astronomy.sunset;
 	document.getElementById("humidity").innerHTML = w.weatherData.atmosphere.humidity + " " + "%";
@@ -50,15 +51,17 @@ function setToday(){
 	document.getElementById("latitude").innerHTML = w.weatherData.item.lat + "&deg;";
 	document.getElementById("longitude").innerHTML = w.weatherData.item.long + "&deg;";
 	document.getElementById("date").innerHTML = w.weatherData.item.forecast[0].day + ", " + w.weatherData.item.forecast[0].date;
+	document.getElementById("time").innerHTML = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
 	document.getElementById("location").innerHTML = w.city;	
 }
 
 function setForecast(){
+	let days = w.weatherData.item.forecast.length;
 	let table = document.getElementById("forecast");
 	let thead = table.appendChild(document.createElement("thead"));
 	thead.classList.add("text-center", "bg-secondary");
 	let tr = thead.appendChild(document.createElement("tr"));
-	for(let i = 0; i < 10; i++){
+	for(let i = 0; i < days; i++){
 		let td = document.createElement("td");
 		td.innerHTML = w.weatherData.item.forecast[i].day;
 		tr.appendChild(td);
@@ -66,14 +69,21 @@ function setForecast(){
 	let tbody = table.appendChild(document.createElement("tbody"));
 	tr = tbody.appendChild(document.createElement("tr"));
 	tr.classList.add("text-center");
-	for(let i = 0; i < 10; i++){
+	for(let i = 0; i < days; i++){
+		let td = document.createElement("td");
+		td.innerHTML = "<i class=\"mt-3 mb-1 wi " + getIconClass(w.weatherData.item.forecast[i].code) + "\"></i>";
+		tr.appendChild(td);
+	}
+	tr = tbody.appendChild(document.createElement("tr"));
+	tr.classList.add("text-center");
+	for(let i = 0; i < days; i++){
 		let td = document.createElement("td");
 		td.innerHTML = "<div class=\"small\">" + w.weatherData.item.forecast[i].text + "</div>";
 		tr.appendChild(td);
 	}
 	tr = tbody.appendChild(document.createElement("tr"));
 	tr.classList.add("text-center");
-	for(let i = 0; i < 10; i++){
+	for(let i = 0; i < days; i++){
 		let td = document.createElement("td"); 
 		td.innerHTML = w.weatherData.item.forecast[i].high + "&deg;" + w.weatherData.units.temperature + " / "
 		+ w.weatherData.item.forecast[i].low + "&deg;" + w.weatherData.units.temperature;
@@ -81,10 +91,121 @@ function setForecast(){
 	}
 }
 
+function getIconClass(weatherCode){
+	let icon;
+	switch(weatherCode){
+		case "0":
+			icon = "wi-tornado";
+			break;
+		case "1":
+			icon = "wi-hurricane-warning";
+			break;
+		case "2":
+			icon = "wi-hurricane";
+			break;
+		case "3":
+		case "4":
+		case "37":
+		case "38":
+		case "39":
+			icon = "wi-thunderstorm";
+			break;
+		case "5":
+		case "6":
+		case "7":
+		case "35":
+		case "46":
+			icon = "wi-rain-mix";
+			break;
+		case "8":
+		case "10":
+		case "18":
+			icon = "wi-sleet";
+			break;
+		case 9:
+			icon = "wi-sprinkle";
+			break;
+		case "11":
+		case "12":
+		case "40":
+			icon = "wi-showers";
+			break;
+		case "13":
+		case "14":
+		case "15":
+		case "16":
+			icon = "wi-snow";
+			break;
+		case "17":
+			icon = "wi-hail";
+			break;
+		case "19":
+			icon = "wi-dust";
+			break;
+		case "20":
+			icon = "wi-fog";
+			break;
+		case "21":
+			icon = "wi-day-haze";
+			break;
+		case "23":
+			icon = "wi-wind-strong";
+			break;
+		case "24":
+			icon = "wi-windy";
+			break;
+		case "25":
+			icon = "wi-snowflake-cold";
+			break;
+		case "26":
+			icon = "wi-cloudy";
+			break;
+		case "27":
+		case "29":
+			icon = "wi-night-alt-cloudy";
+			break;
+		case "28":
+		case "30":
+			icon = "wi-day-cloudy";
+			break;
+		case "31":
+			icon = "wi-night-clear";
+			break;
+		case "32":
+			icon = "wi-day-sunny";
+			break;
+		case "33":
+			icon = "wi-night-cloudy";
+			break;
+		case "34":
+			icon = "wi-day-haze";
+			break;
+		case "36":
+			icon = "wi-hot";
+			break;
+		case "41":
+		case "42":
+		case "43":
+			icon = "wi-snow";
+			break;
+		case "44":
+			icon = "wi-cloud";
+			break;
+		case "45":
+		case "47":
+			icon = "wi-storm-showers";
+			break;
+		case "3200":
+		default:
+			icon = "wi-na";
+			break;
+	}
+	return icon;
+}
+
 function getData(){
 	getCity(getWeatherData);
 }
-
 
 window.onload = function(){
 	getData();

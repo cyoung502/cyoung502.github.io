@@ -56,6 +56,9 @@ tbody tr:last-child td:last-child {
 .forecast .table td{
 	border-top: none;
 }
+.forecast .wi{
+	font-size: 2rem;
+}
 .location{
 	position: absolute;
 	top: 1rem;
@@ -72,8 +75,11 @@ tbody tr:last-child td:last-child {
 	z-index: 9000;
 }
 .yahoo{
-	color: #FFF;
 	position: absolute;
 	bottom: 1rem;
 	right: 1rem;
+}
+.yahoo,
+.yahoo a{
+	color: #FFF;
 }

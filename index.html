@@ -4,6 +4,7 @@
 		<title>Brainlet Weather</title>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/weather-icons.min.css">
 	</head>
 	<body>
 		<div class="container">
@@ -120,18 +121,19 @@
 			<table id="forecast" class="table">
 			</table>
 		</div>
-		<div class="date">
-			<h2 id="date"></h2>
+		<div class="date text-center">
+			<h3 id="date"></h3>
+			<h5 id="time"></h5>
 		</div>
 		<div class="location d-block small">
-			<h2 id="location"></h2>
+			<h3 id="location"></h3>
 			<div class="text-center">
-				<p id="latitude" class="d-inline"></p>
-				<p id="longitude" class="d-inline"></p>
+				<h5 id="latitude" class="d-inline"></h5>
+				<h5 id="longitude" class="d-inline"></h5>
 			</div>
 		</div>
-		<div class="yahoo">
-			Data Provided by Yahoo!
+		<div class="yahoo small">
+			<a href="https://www.yahoo.com/news/weather">Weather Data by Yahoo!</a>
 		</div>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
