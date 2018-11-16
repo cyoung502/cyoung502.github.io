@@ -22,7 +22,8 @@ Weather.prototype.setBackground = function(){
 	sunrise = parseInt(sunrise.split(":")[0]);
 	let sunset = this.weatherData.astronomy.sunset;
 	sunset = parseInt(sunset.split(":")[0]) + 12;
-	if(d.getHours() >= sunrise && d.getHours <= sunset){
+	let h = d.getHours();
+	if(h >= sunrise && h <= sunset){
 		this.background = this.background + "day.jpg";
 	} else {
 		this.background = this.background + "night.jpg";
@@ -30,12 +31,12 @@ Weather.prototype.setBackground = function(){
 }
 
 Weather.prototype.setImages = function(image){
+	this.setBackground();
 	this.setOverlay(image);
 	this.setStatus(image);
 }
 
 Weather.prototype.init = function(){
-	this.setBackground();
 	let weatherCode = this.weatherData.item.condition.code;
 	switch(weatherCode) {
 		case "0":

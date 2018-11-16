@@ -7,7 +7,6 @@
 	</head>
 	<body>
 		<div class="container">
-			<h1>Brainlet Weather</h1>
 			<h2 class="display-2">Today</h2>
 			<table class="table table-bordered">
 				<thead>
@@ -103,23 +102,36 @@
 					</tr>
 			</tbody> -->
 		</table>
-		<h2 class="display-2">10 Day Forecast</h2>
+<!-- 		<h2 class="display-2">10 Day Forecast</h2>
 		<table id="forecast" class="table table-bordered">
-		</table>
+		</table> -->
 	</div>
 	<div id="background">
 	</div>
 	<div id="overlay">
 	</div>
 	<div id="foreground">
-		<h1 id="condition" class="display-1"></h1>
-		<h1 id="temperature" class="display-4"></h1>
+		<div class="d-block">
+			<div id="condition" class="display-4 d-inline mr-3"></div>
+			<div id="temperature" class="display-4 d-inline"></div>
+		</div>
 		<img src="images/foreground/brainlet.png" class="m-2">
-		<h2 id="location"></h1>
-		<h5 id="date"></h5>
-		<div class="d-block small">
-			<p id="latitude" class="d-inline"></p>
-			<p id="longitude" class="d-inline"></p>
+		<div class="forecast">
+			<table id="forecast" class="table">
+			</table>
+		</div>
+		<div class="date">
+			<h2 id="date"></h2>
+		</div>
+		<div class="location d-block small">
+			<h2 id="location"></h2>
+			<div class="text-center">
+				<p id="latitude" class="d-inline"></p>
+				<p id="longitude" class="d-inline"></p>
+			</div>
+		</div>
+		<div class="yahoo">
+			Data Provided by Yahoo!
 		</div>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>

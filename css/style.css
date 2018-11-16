@@ -1,7 +1,3 @@
-thead{
-	background-color: var(--light);
-	text-align: center;
-}
 #background{
 	background-position: center;
 	background-repeat: no-repeat;
@@ -31,8 +27,53 @@ thead{
     height: 100vh;
 	z-index: -1;
 }
+.forecast{
+	max-width: 75vw;
+	overflow-x: auto;
+	overflow-y: hidden;
+}
+thead tr td:first-child{
+	border-top-left-radius: .5rem;
+}
+thead tr td:last-child{
+	border-top-right-radius: .5rem
+}
+tbody tr:last-child td:first-child {
+    border-bottom-left-radius: .5rem;
+}
+
+tbody tr:last-child td:last-child {
+    border-bottom-right-radius: .5rem;
+}
+.forecast tbody{
+	background-color: #6c757d80;
+}
+.forecast td {
+	color: #FFF;
+	width: calc(75vw/10);
+	padding: .25rem;
+}
+.forecast .table td{
+	border-top: none;
+}
+.location{
+	position: absolute;
+	top: 1rem;
+	left: 1rem;
+}
+.date{
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+}
 .container{
 	position: absolute;
 	top: 100vh;
 	z-index: 9000;
+}
+.yahoo{
+	color: #FFF;
+	position: absolute;
+	bottom: 1rem;
+	right: 1rem;
 }

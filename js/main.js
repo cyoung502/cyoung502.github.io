@@ -56,6 +56,7 @@ function setToday(){
 function setForecast(){
 	let table = document.getElementById("forecast");
 	let thead = table.appendChild(document.createElement("thead"));
+	thead.classList.add("text-center", "bg-secondary");
 	let tr = thead.appendChild(document.createElement("tr"));
 	for(let i = 0; i < 10; i++){
 		let td = document.createElement("td");
@@ -64,11 +65,18 @@ function setForecast(){
 	}
 	let tbody = table.appendChild(document.createElement("tbody"));
 	tr = tbody.appendChild(document.createElement("tr"));
+	tr.classList.add("text-center");
 	for(let i = 0; i < 10; i++){
 		let td = document.createElement("td");
-		td.innerHTML = "<div class=\"small\">" + w.weatherData.item.forecast[i].text + "</div>" + "<br>"
-		+ "High: " + w.weatherData.item.forecast[i].high + "<br>"
-		+ "Low: " + w.weatherData.item.forecast[i].low;
+		td.innerHTML = "<div class=\"small\">" + w.weatherData.item.forecast[i].text + "</div>";
+		tr.appendChild(td);
+	}
+	tr = tbody.appendChild(document.createElement("tr"));
+	tr.classList.add("text-center");
+	for(let i = 0; i < 10; i++){
+		let td = document.createElement("td"); 
+		td.innerHTML = w.weatherData.item.forecast[i].high + "&deg;" + w.weatherData.units.temperature + " / "
+		+ w.weatherData.item.forecast[i].low + "&deg;" + w.weatherData.units.temperature;
 		tr.appendChild(td);
 	}
 }
