@@ -1,4 +1,38 @@
 thead{
-	text-align: center;
 	background-color: var(--light);
+	text-align: center;
+}
+#background{
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100vh;
+	position: absolute;
+	top: 0;
+	width: 100vw; 
+	z-index: -3;
+}
+#overlay{
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100vh;
+	position: absolute;
+	top: 0;
+	width: 100vw; 
+	z-index: -2;
+}
+#foreground{
+    align-items: center;
+    color: #c7c7c7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+	z-index: -1;
+}
+.container{
+	position: absolute;
+	top: 100vh;
+	z-index: 9000;
 }

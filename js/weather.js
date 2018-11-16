@@ -1,26 +1,41 @@
-let imageExtension = ".jpg";
+let imageExtension = ".png";
 
 function Weather(city, weatherData){
 	this.city = city;
 	this.weatherData = weatherData;
-	this.background = "images/bg/";
+	this.background = "images/background/";
+	this.overlay = "images/overlay/";
 	this.status = "images/status/";
 }
 
-Weather.prototype.setBackground = function(image){
-	this.background = this.background + image + imageExtension;
+Weather.prototype.setOverlay = function(image){
+	this.overlay = this.overlay + image + imageExtension;
 }
 
 Weather.prototype.setStatus = function(image){
 	this.status = this.status + image + imageExtension;
 }
 
+Weather.prototype.setBackground = function(){
+	let d = new Date();
+	let sunrise = this.weatherData.astronomy.sunrise;
+	sunrise = parseInt(sunrise.split(":")[0]);
+	let sunset = this.weatherData.astronomy.sunset;
+	sunset = parseInt(sunset.split(":")[0]) + 12;
+	if(d.getHours() >= sunrise && d.getHours <= sunset){
+		this.background = this.background + "day.jpg";
+	} else {
+		this.background = this.background + "night.jpg";
+	}
+}
+
 Weather.prototype.setImages = function(image){
-	this.setBackground(image);
+	this.setOverlay(image);
 	this.setStatus(image);
 }
 
 Weather.prototype.init = function(){
+	this.setBackground();
 	let weatherCode = this.weatherData.item.condition.code;
 	switch(weatherCode) {
 		case "0":

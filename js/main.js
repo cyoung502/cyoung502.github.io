@@ -3,10 +3,9 @@ let city, weatherData;
 
 function getCity(callback){
 	$.ajax({
-		url: "https://ipapi.co/jsonp",
-		dataType: "jsonp",
+		url: "https://ipapi.co/json",
+		dataType: "json",
 		cache: false,
-		jsonpCallback: "callbackFunction",
 		success: function(result){
 			city = result.city + ", " + result.region;
 			let weatherUrl = "https://query.yahooapis.com/v1/public/yql?q=select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + city + "')&format=json";
@@ -25,10 +24,16 @@ function getWeatherData(weatherUrl){
 			weatherData = result.query.results.channel;
 			w = new Weather(city, weatherData);
 			w.init();
+			setStage();
 			setToday();
 			setForecast();
 		}
 	});
+}
+
+function setStage(){
+	document.getElementById("background").setAttribute("style", "background-image: url(" + w.background + ")");
+	document.getElementById("overlay").setAttribute("style", "background-image: url(" + w.overlay + ")");
 }
 
 function setToday(){
@@ -37,7 +42,7 @@ function setToday(){
 	document.getElementById("humidity").innerHTML = w.weatherData.atmosphere.humidity + " " + "%";
 	document.getElementById("pressure").innerHTML = w.weatherData.atmosphere.pressure + " " + w.weatherData.units.pressure;
 	document.getElementById("visibility").innerHTML = w.weatherData.atmosphere.visibility + " " + w.weatherData.units.distance;
-	document.getElementById("temperature").innerHTML = w.weatherData.item.condition.temp + " " + w.weatherData.units.temperature;
+	document.getElementById("temperature").innerHTML = w.weatherData.item.condition.temp + "&deg; " + w.weatherData.units.temperature;
 	document.getElementById("condition").innerHTML = w.weatherData.item.condition.text;
 	document.getElementById("chill").innerHTML = w.weatherData.wind.chill + " " + w.weatherData.units.temperature;
 	document.getElementById("direction").innerHTML = w.weatherData.wind.direction;

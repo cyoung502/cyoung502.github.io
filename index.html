@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Brainlet Weather</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-</head>
-<body>
-	<div class="container">
-		<h1>Brainlet Weather</h1>
-		<h2 class="display-2">Today</h2>
-		<table class="table table-bordered">
-			<thead>
-				<tr>
-					<td colspan="2">Astronomy</td>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td width="15%">Sunset:</td>
-					<td id="sunrise"></td>
-				</tr>
-				<tr>
-					<td>Sunset:</td>
-					<td id="sunset"></td>
-				</tr>
+	<head>
+		<title>Brainlet Weather</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+	<body>
+		<div class="container">
+			<h1>Brainlet Weather</h1>
+			<h2 class="display-2">Today</h2>
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<td colspan="2">Astronomy</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td width="15%">Sunset:</td>
+						<td id="sunrise"></td>
+					</tr>
+					<tr>
+						<td>Sunset:</td>
+						<td id="sunset"></td>
+					</tr>
 				<tr></tr>
 			</tbody>
 			<thead>
@@ -45,21 +45,21 @@
 					<td id="visibility"></td>
 				</tr>
 			</tbody>
-			<thead>
-				<tr>
-					<td colspan="2">Current Conditions</td>
-				</tr>
+			<!-- 			<thead>
+					<tr>
+							<td colspan="2">Current Conditions</td>
+					</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td>Temperature:</td>
-					<td id="temperature"></td>
-				</tr>
-				<tr>
-					<td>Condition:</td>
-					<td id="condition"></td>
-				</tr>
-			</tbody>
+					<tr>
+							<td>Temperature:</td>
+							<td id="temperature"></td>
+					</tr>
+					<tr>
+							<td>Condition:</td>
+							<td id="condition"></td>
+					</tr>
+			</tbody> -->
 			<thead>
 				<tr>
 					<td colspan="2">Wind</td>
@@ -79,40 +79,53 @@
 					<td id="speed"></td>
 				</tr>
 			</tbody>
-			<thead>
-				<tr>
-					<td colspan="2">Location</td>
-				</tr>
+			<!-- 			<thead>
+					<tr>
+							<td colspan="2">Location</td>
+					</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td>Latitude:</td>
-					<td id="latitude"></td>
-				</tr>
-				<tr>
-					<td>Longitude:</td>
-					<td id="longitude"></td>
-				</tr>
-				<tr>
-					<td>Date:</td>
-					<td id="date"></td>
-				</tr>
-				<tr>
-					<td>Location:</td>
-					<td id="location"></td>
-				</tr>
-			</tbody>
+					<tr>
+							<td>Latitude:</td>
+							<td id="latitude"></td>
+					</tr>
+					<tr>
+							<td>Longitude:</td>
+							<td id="longitude"></td>
+					</tr>
+					<tr>
+							<td>Date:</td>
+							<td id="date"></td>
+					</tr>
+					<tr>
+							<td>Location:</td>
+							<td id="location"></td>
+					</tr>
+			</tbody> -->
 		</table>
 		<h2 class="display-2">10 Day Forecast</h2>
 		<table id="forecast" class="table table-bordered">
 		</table>
-		
 	</div>
-
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-<script type="text/javascript" src="js/weather.js"></script>
-<script type="text/javascript" src="js/main.js"></script>
+	<div id="background">
+	</div>
+	<div id="overlay">
+	</div>
+	<div id="foreground">
+		<h1 id="condition" class="display-1"></h1>
+		<h1 id="temperature" class="display-4"></h1>
+		<img src="images/foreground/brainlet.png" class="m-2">
+		<h2 id="location"></h1>
+		<h5 id="date"></h5>
+		<div class="d-block small">
+			<p id="latitude" class="d-inline"></p>
+			<p id="longitude" class="d-inline"></p>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="js/weather.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
