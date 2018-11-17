@@ -31,28 +31,59 @@ function getWeatherData(weatherUrl){
 	});
 }
 
+function showDetails(){
+	let details = document.getElementById("details")
+	let brainlet = document.getElementById("brainlet");
+	let btn = document.getElementById("btn-details");
+	if(details.classList.contains("d-none")){
+		btn.innerHTML = "Close";
+	} else {
+		btn.innerHTML = "Show Details";
+	}
+	details.classList.toggle("d-none");
+	brainlet.classList.toggle("d-none");
+}
+
 function setStage(){
 	document.getElementById("background").setAttribute("style", "background-image: url(" + w.background + ")");
 	document.getElementById("overlay").setAttribute("style", "background-image: url(" + w.overlay + ")");
 }
 
 function setToday(){
-	let d = new Date();
+	function fixTime(time){
+		if(time < "10"){
+			return "0" + time;
+		} else {
+			return time;
+		}
+	}
+	let node = document.getElementById("direction").parentNode;
+	let icon = document.createElement("i");
+	icon.classList.add("wi", "wi-wind", "from-" + w.weatherData.wind.direction + "-deg", "display-5", "mr-2");
+	node.insertBefore(icon, node.childNodes[5]);
+	node = document.getElementById("condition").parentNode;
+	icon = document.createElement("i");
+	icon.classList.add("wi", getIconClass(w.weatherData.item.condition.code), "display-4", "mr-2");
+	node.insertBefore(icon, node.childNodes[2]);
 	document.getElementById("sunrise").innerHTML = w.weatherData.astronomy.sunrise;
 	document.getElementById("sunset").innerHTML = w.weatherData.astronomy.sunset;
-	document.getElementById("humidity").innerHTML = w.weatherData.atmosphere.humidity + " " + "%";
+	document.getElementById("humidity").innerHTML = w.weatherData.atmosphere.humidity + "%";
 	document.getElementById("pressure").innerHTML = w.weatherData.atmosphere.pressure + " " + w.weatherData.units.pressure;
 	document.getElementById("visibility").innerHTML = w.weatherData.atmosphere.visibility + " " + w.weatherData.units.distance;
 	document.getElementById("temperature").innerHTML = w.weatherData.item.condition.temp + "&deg; " + w.weatherData.units.temperature;
 	document.getElementById("condition").innerHTML = w.weatherData.item.condition.text;
-	document.getElementById("chill").innerHTML = w.weatherData.wind.chill + " " + w.weatherData.units.temperature;
-	document.getElementById("direction").innerHTML = w.weatherData.wind.direction;
+	document.getElementById("chill").innerHTML = w.weatherData.wind.chill + "&deg;" + w.weatherData.units.temperature;
+	document.getElementById("direction").innerHTML = w.weatherData.wind.direction + "&deg;";
 	document.getElementById("speed").innerHTML = w.weatherData.wind.speed + " " + w.weatherData.units.speed;
 	document.getElementById("latitude").innerHTML = w.weatherData.item.lat + "&deg;";
 	document.getElementById("longitude").innerHTML = w.weatherData.item.long + "&deg;";
 	document.getElementById("date").innerHTML = w.weatherData.item.forecast[0].day + ", " + w.weatherData.item.forecast[0].date;
-	document.getElementById("time").innerHTML = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
 	document.getElementById("location").innerHTML = w.city;	
+	let d = new Date();
+	let h = fixTime(d.getHours());
+	let m = fixTime(d.getMinutes());
+	let s = fixTime(d.getSeconds());
+	document.getElementById("time").innerHTML = d.getHours() + ":" + d.getMinutes() + ":" + s;
 }
 
 function setForecast(){
@@ -107,7 +138,6 @@ function getIconClass(weatherCode){
 		case "4":
 		case "37":
 		case "38":
-		case "39":
 			icon = "wi-thunderstorm";
 			break;
 		case "5":
@@ -127,6 +157,7 @@ function getIconClass(weatherCode){
 			break;
 		case "11":
 		case "12":
+		case "39":
 		case "40":
 			icon = "wi-showers";
 			break;
@@ -149,7 +180,7 @@ function getIconClass(weatherCode){
 			icon = "wi-day-haze";
 			break;
 		case "23":
-			icon = "wi-wind-strong";
+			icon = "wi-strong-wind";
 			break;
 		case "24":
 			icon = "wi-windy";
@@ -158,13 +189,15 @@ function getIconClass(weatherCode){
 			icon = "wi-snowflake-cold";
 			break;
 		case "26":
-			icon = "wi-cloudy";
+			icon = "wi-day-sunny-overcast";
 			break;
 		case "27":
 		case "29":
 			icon = "wi-night-alt-cloudy";
 			break;
 		case "28":
+			icon = "wi-cloudy";
+			break;
 		case "30":
 			icon = "wi-day-cloudy";
 			break;

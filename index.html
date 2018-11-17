@@ -5,9 +5,10 @@
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link rel="stylesheet" type="text/css" href="css/weather-icons.min.css">
+		<link rel="stylesheet" type="text/css" href="css/weather-icons-wind.min.css">
 	</head>
 	<body>
-		<div class="container">
+<!-- 		<div class="container">
 			<h2 class="display-2">Today</h2>
 			<table class="table table-bordered">
 				<thead>
@@ -24,122 +25,156 @@
 						<td>Sunset:</td>
 						<td id="sunset"></td>
 					</tr>
-				<tr></tr>
-			</tbody>
-			<thead>
-				<tr>
-					<td colspan="2">Atmosphere</td>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>Humidity:</td>
-					<td id="humidity"></td>
-				</tr>
-				<tr>
-					<td>Pressure:</td>
-					<td id="pressure"></td>
-				</tr>
-				<tr>
-					<td>Visibility:</td>
-					<td id="visibility"></td>
-				</tr>
-			</tbody>
-			<!-- 			<thead>
+				</tbody>
+				<thead>
 					<tr>
-							<td colspan="2">Current Conditions</td>
+						<td colspan="2">Atmosphere</td>
 					</tr>
-			</thead>
-			<tbody>
+				</thead>
+				<tbody>
 					<tr>
-							<td>Temperature:</td>
-							<td id="temperature"></td>
+						<td>Humidity:</td>
+						<td id="humidity"></td>
 					</tr>
 					<tr>
-							<td>Condition:</td>
-							<td id="condition"></td>
-					</tr>
-			</tbody> -->
-			<thead>
-				<tr>
-					<td colspan="2">Wind</td>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>Wind Chill:</td>
-					<td id="chill"></td>
-				</tr>
-				<tr>
-					<td>Direction:</td>
-					<td id="direction"></td>
-				</tr>
-				<tr>
-					<td>Speed</td>
-					<td id="speed"></td>
-				</tr>
-			</tbody>
-			<!-- 			<thead>
-					<tr>
-							<td colspan="2">Location</td>
-					</tr>
-			</thead>
-			<tbody>
-					<tr>
-							<td>Latitude:</td>
-							<td id="latitude"></td>
+						<td>Pressure:</td>
+						<td id="pressure"></td>
 					</tr>
 					<tr>
-							<td>Longitude:</td>
-							<td id="longitude"></td>
+						<td>Visibility:</td>
+						<td id="visibility"></td>
+					</tr>
+				</tbody>
+				<thead>
+					<tr>
+						<td colspan="2">Current Conditions</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Temperature:</td>
+						<td id="temperature"></td>
 					</tr>
 					<tr>
-							<td>Date:</td>
-							<td id="date"></td>
+						<td>Condition:</td>
+						<td id="condition"></td>
+					</tr>
+				</tbody>
+				<thead>
+					<tr>
+						<td colspan="2">Wind</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Wind Chill:</td>
+						<td id="chill"></td>
 					</tr>
 					<tr>
-							<td>Location:</td>
-							<td id="location"></td>
+						<td>Direction:</td>
+						<td id="direction"></td>
 					</tr>
-			</tbody> -->
-		</table>
-<!-- 		<h2 class="display-2">10 Day Forecast</h2>
-		<table id="forecast" class="table table-bordered">
-		</table> -->
-	</div>
-	<div id="background">
-	</div>
-	<div id="overlay">
-	</div>
-	<div id="foreground">
-		<div class="d-block">
-			<div id="condition" class="display-4 d-inline mr-3"></div>
-			<div id="temperature" class="display-4 d-inline"></div>
-		</div>
-		<img src="images/foreground/brainlet.png" class="m-2">
-		<div class="forecast">
-			<table id="forecast" class="table">
+					<tr>
+						<td>Speed</td>
+						<td id="speed"></td>
+					</tr>
+				</tbody>
+				<thead>
+					<tr>
+						<td colspan="2">Location</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Latitude:</td>
+						<td id="latitude"></td>
+					</tr>
+					<tr>
+						<td>Longitude:</td>
+						<td id="longitude"></td>
+					</tr>
+					<tr>
+						<td>Date:</td>
+						<td id="date"></td>
+					</tr>
+					<tr>
+						<td>Location:</td>
+						<td id="location"></td>
+					</tr>
+				</tbody>
 			</table>
+			<h2 class="display-2">10 Day Forecast</h2>
+			<table id="forecast" class="table table-bordered">
+			</table>
+		</div> -->
+		<div id="background">
 		</div>
-		<div class="date text-center">
-			<h3 id="date"></h3>
-			<h5 id="time"></h5>
+		<div id="overlay">
 		</div>
-		<div class="location d-block small">
-			<h3 id="location"></h3>
-			<div class="text-center">
-				<h5 id="latitude" class="d-inline"></h5>
-				<h5 id="longitude" class="d-inline"></h5>
+		<div id="foreground">
+			<div class="d-block">
+				<div id="condition" class="display-4 d-inline mr-3"></div>
+				<div id="temperature" class="display-4 d-inline"></div>
+			</div>
+			<button id="btn-details" type="button" class="mt-4 btn btn-secondary btn-block" onclick="showDetails()">Details</button>
+			<div id="details" class="m-4 p-3 d-none">
+				<h2>Astronomy</h2>
+				<div class="row">
+					<div class="col-12">
+						<i class="wi wi-sunrise display-5 mr-2"></i>
+						<div id="sunrise" class="d-inline display-5 mr-4"></div>
+						<i class="wi wi-sunset display-5 mr-2"></i>
+						<div id="sunset" class="d-inline display-5"></div>
+					</div>
+				</div>
+				<hr>
+				<h2>Atmospehere</h2>
+				<div class="row">
+					<div class="col-12">
+						<i class="wi wi-humidity display-5 mr-2"></i>
+						<div id="humidity" class="d-inline display-5 mr-4"></div>
+						<i class="wi wi-barometer display-5 mr-2"></i>
+						<div id="pressure" class="d-inline display-5 mr-4"></div>
+						<i class="wi wi-horizon display-5 mr-2"></i>
+						<div id="visibility" class="d-inline display-5 mr-4"></div>
+					</div>
+				</div>
+				<hr>
+				<h2>Wind</h2>
+				<div class="row">
+					<div class="col-12">
+						<i class="wi wi-thermometer display-5 mr-2"></i>
+						<div id="chill" class="d-inline display-5 mr-4"></div>
+						<div id="direction" class="d-inline display-5 mr-4"></div>
+						<i class="wi wi-strong-wind display-5 mr-2"></i>
+						<div id="speed" class="d-inline display-5"></div>
+					</div>
+				</div>
+			</div>
+			<img id="brainlet" src="images/foreground/brainlet.png" class="m-4">
+			<div class="forecast">
+				<table id="forecast" class="table">
+				</table>
+			</div>
+			<div class="date text-center">
+				<h3 id="date"></h3>
+				<h5 id="time"></h5>
+			</div>
+			<div class="location d-block small">
+				<h3 id="location"></h3>
+				<div class="text-center">
+					<h5 id="latitude" class="d-inline"></h5>
+					<h5 id="longitude" class="d-inline"></h5>
+				</div>
+			</div>
+			<div class="yahoo small">
+				<a href="https://www.yahoo.com/news/weather">Weather Data by Yahoo!</a>
 			</div>
 		</div>
-		<div class="yahoo small">
-			<a href="https://www.yahoo.com/news/weather">Weather Data by Yahoo!</a>
-		</div>
-	</div>
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-	<script type="text/javascript" src="js/weather.js"></script>
-	<script type="text/javascript" src="js/main.js"></script>
-</body>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="js/weather.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+	</body>
 </html>

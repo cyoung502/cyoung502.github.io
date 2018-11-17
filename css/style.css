@@ -27,6 +27,14 @@
     height: 100vh;
 	z-index: -1;
 }
+#btn-details{
+	max-width: 20vw;
+}
+#details{
+	min-height: 512px;
+	min-width: 512px;
+	border-radius: .5rem;
+}
 .forecast{
 	max-width: 75vw;
 	overflow-x: auto;
@@ -45,7 +53,11 @@ tbody tr:last-child td:first-child {
 tbody tr:last-child td:last-child {
     border-bottom-right-radius: .5rem;
 }
-.forecast tbody{
+hr{
+	border-top: 1px solid #c7c7c7;
+}
+.forecast tbody,
+#details{
 	background-color: #6c757d80;
 }
 .forecast td {
@@ -82,4 +94,9 @@ tbody tr:last-child td:last-child {
 .yahoo,
 .yahoo a{
 	color: #FFF;
+}
+.display-5{
+    font-size: 2.5rem;
+    font-weight: 300;
+    line-height: 1.2;
 }
