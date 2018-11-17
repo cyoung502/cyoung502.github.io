@@ -83,7 +83,7 @@ function setToday(){
 	let h = fixTime(d.getHours());
 	let m = fixTime(d.getMinutes());
 	let s = fixTime(d.getSeconds());
-	document.getElementById("time").innerHTML = d.getHours() + ":" + d.getMinutes() + ":" + s;
+	document.getElementById("time").innerHTML = h + ":" + m + ":" + s;
 }
 
 function setForecast(){
