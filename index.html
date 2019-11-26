@@ -5,15 +5,20 @@
     <title>Idle Heroes: Prophet Orb Simulator: by Zobris</title>
     <meta name="description"
         content="A Prophet Orb Simulator written by Zobris for the popular mobile game Idle Heroes by DH Games.">
-         <meta name="keywords" content="Idle, Heroes, Idle Heroes, DH, Games, DH Games, DHGames, Prophet, Orb, Simulator, Prophet Orb Simulator, PO, RNG, Zobris, Samogot">
+    <meta name="keywords"
+        content="Idle, Heroes, Idle Heroes, DH, Games, DH Games, DHGames, Prophet, Orb, Simulator, Prophet Orb Simulator, PO, RNG, Zobris, Samogot">
     <link rel="icon" type="image/png" href="images/2101.png">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
 </script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
 </script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145254282-1"></script>
 <script>
@@ -28,7 +33,11 @@
 </script>
 
 <script>
-    var heros = [{
+    var heros = [
+        /*-------------------------------------------------------------------------------------------------------------
+            SHADOW
+        -------------------------------------------------------------------------------------------------------------*/
+        {
             name: "Grumpy Corpse 4*",
             faction: "Shadow",
             probability: 0.075,
@@ -76,7 +85,7 @@
         }, {
             name: "Blood Blade",
             faction: "Shadow",
-            probability: 0.0028,
+            probability: 0.00233,
             image: "images/hero/shadow/0821.png"
         }, {
             name: "Dominator",
@@ -96,7 +105,7 @@
         }, {
             name: "Corpsedemon",
             faction: "Shadow",
-            probability: 0.0028,
+            probability: 0.00233,
             image: "images/hero/shadow/0861.png"
         }, {
             name: "Baade",
@@ -106,7 +115,7 @@
         }, {
             name: "Kamath",
             faction: "Shadow",
-            probability: 0.0028,
+            probability: 0.00233,
             image: "images/hero/shadow/0881.png"
         }, {
             name: "Aidan",
@@ -121,13 +130,18 @@
         }, {
             name: "Jahra",
             faction: "Shadow",
-            probability: 0.0028,
+            probability: 0.00233,
             image: "images/hero/shadow/1431.png"
         }, {
             name: "Horus",
             faction: "Shadow",
-            probability: 0.0028,
+            probability: 0.00234,
             image: "images/hero/shadow/1491.png"
+        }, {
+            name: "Gustin",
+            faction: "Shadow",
+            probability: 0.00234,
+            image: "images/hero/shadow/1581.png"
         }, {
             name: "Grumpy Corpse 5*",
             faction: "Shadow",
@@ -169,16 +183,20 @@
             probability: 0.006,
             image: "images/hero/shadow/1282.png"
         }, {
-            name: "Shards 4*",
+            name: "Shards Shadow 4*",
             faction: "Shadow",
             probability: 0.07,
             image: "images/hero/10021.png"
         }, {
-            name: "Shards 5*",
+            name: "Shards Shadow 5*",
             faction: "Shadow",
             probability: 0.24,
             image: "images/hero/10011.png"
-        }, {
+        },
+        /*-------------------------------------------------------------------------------------------------------------
+            FOREST
+        -------------------------------------------------------------------------------------------------------------*/
+        {
             name: "Wind Walker 4*",
             faction: "Forest",
             probability: 0.075,
@@ -241,7 +259,7 @@
         }, {
             name: "Starlight",
             faction: "Forest",
-            probability: 0.0028,
+            probability: 0.0023,
             image: "images/hero/forest/1151.png"
         }, {
             name: "Groo",
@@ -256,7 +274,7 @@
         }, {
             name: "Vesa",
             faction: "Forest",
-            probability: 0.0028,
+            probability: 0.0023,
             image: "images/hero/forest/1181.png"
         }, {
             name: "Malassa",
@@ -266,18 +284,23 @@
         }, {
             name: "Heart Watcher",
             faction: "Forest",
-            probability: 0.0028,
+            probability: 0.0024,
             image: "images/hero/forest/1201.png"
         }, {
             name: "Valkyrie",
             faction: "Forest",
-            probability: 0.0028,
+            probability: 0.0023,
             image: "images/hero/forest/1451.png"
         }, {
             name: "Oberon",
             faction: "Forest",
-            probability: 0.0028,
+            probability: 0.0023,
             image: "images/hero/forest/1541.png"
+        }, {
+            name: "Garuda",
+            faction: "Forest",
+            probability: 0.0024,
+            image: "images/hero/forest/1591.png"
         }, {
             name: "Wind Walker 5*",
             faction: "Forest",
@@ -319,22 +342,26 @@
             probability: 0.006,
             image: "images/hero/forest/1342.png"
         }, {
-            name: "Shards 5*",
+            name: "Shards Forest 5*",
             faction: "Forest",
             probability: 0.24,
             image: "images/hero/10011.png"
         }, {
-            name: "Shards 4*",
+            name: "Shards Forest 4*",
             faction: "Forest",
             probability: 0.07,
             image: "images/hero/10021.png"
-        }, {
-            name: "Shards 4*",
+        },
+        /*-------------------------------------------------------------------------------------------------------------
+            FORTRESS
+        -------------------------------------------------------------------------------------------------------------*/
+        {
+            name: "Shards Fortress 4*",
             faction: "Fortress",
             probability: 0.07,
             image: "images/hero/10021.png"
         }, {
-            name: "Shards 5*",
+            name: "Shards Fortress 5*",
             faction: "Fortress",
             probability: 0.24,
             image: "images/hero/10011.png"
@@ -483,13 +510,17 @@
             faction: "Fortress",
             probability: 0.006,
             image: "images/hero/fortress/1302.png"
-        }, {
-            name: "Shards 5*",
+        },
+        /*-------------------------------------------------------------------------------------------------------------
+            ABYSS
+        -------------------------------------------------------------------------------------------------------------*/
+        {
+            name: "Shards Abyss 5*",
             faction: "Abyss",
             probability: 0.24,
             image: "images/hero/10011.png"
         }, {
-            name: "Shards 4*",
+            name: "Shards Abyss 4*",
             faction: "Abyss",
             probability: 0.07,
             image: "images/hero/10021.png"
@@ -536,7 +567,7 @@
         }, {
             name: "Skerei",
             faction: "Abyss",
-            probability: 0.0028,
+            probability: 0.0024,
             image: "images/hero/abyss/1011.png"
         }, {
             name: "Dantalian",
@@ -551,7 +582,7 @@
         }, {
             name: "Barea",
             faction: "Abyss",
-            probability: 0.004,
+            probability: 0.0023,
             image: "images/hero/abyss/1041.png"
         }, {
             name: "Queen",
@@ -566,7 +597,7 @@
         }, {
             name: "King Barton",
             faction: "Abyss",
-            probability: 0.0028,
+            probability: 0.0023,
             image: "images/hero/abyss/1071.png"
         }, {
             name: "Fat Mu",
@@ -586,13 +617,18 @@
         }, {
             name: "Kroos",
             faction: "Abyss",
-            probability: 0.0028,
+            probability: 0.0023,
             image: "images/hero/abyss/1411.png"
         }, {
             name: "Cthugha",
             faction: "Abyss",
-            probability: 0.0028,
+            probability: 0.0023,
             image: "images/hero/abyss/1481.png"
+        }, {
+            name: "Nakia",
+            faction: "Abyss",
+            probability: 0.0024,
+            image: "images/hero/abyss/1571.png"
         }, {
             name: "Rogge 5*",
             faction: "Abyss",
@@ -633,13 +669,17 @@
             faction: "Abyss",
             probability: 0.006,
             image: "images/hero/abyss/1322.png"
-        }, {
+        },
+        /*-------------------------------------------------------------------------------------------------------------
+            LIGHT
+        -------------------------------------------------------------------------------------------------------------*/
+        {
             name: "Shards Light 4*",
             faction: "Light",
             probability: 0.20,
             image: "images/hero/10021.png"
         }, {
-            name: "Shards 5*",
+            name: "Shards Light 5*",
             faction: "Light",
             probability: 0.14,
             image: "images/hero/10011.png"
@@ -703,8 +743,12 @@
             faction: "Light",
             probability: 0.005,
             image: "images/hero/light_dark/1372.png"
-        }, {
-            name: "Shards 5*",
+        },
+        /*-------------------------------------------------------------------------------------------------------------
+            DARK
+        -------------------------------------------------------------------------------------------------------------*/
+        {
+            name: "Shards Dark 5*",
             faction: "Dark",
             probability: 0.14,
             image: "images/hero/10011.png"
@@ -830,10 +874,69 @@
         return hero;
     }
 
+    function simulateShards(data) {
+        function randomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function sim(count, min, max) {
+            var total = 0;
+            for (var i = 0; i < count; i++) {
+                total += randomInt(min, max);
+            }
+            return total;
+        }
+
+        data.forEach(function (e) {
+            switch (e.name) {
+                case "Shards Forest 5*":
+                    e.count = sim(e.count, 7, 18);
+                    break;
+                case "Shards Forest 4*":
+                    e.count = sim(e.count, 10, 20);
+                    break;
+                case "Shards Shadow 5*":
+                    e.count = sim(e.count, 7, 18);
+                    break;
+                case "Shards Shadow 4*":
+                    e.count = sim(e.count, 10, 20);
+                    break;
+                case "Shards Abyss 5*":
+                    e.count = sim(e.count, 7, 18);
+                    break;
+                case "Shards Abyss 4*":
+                    e.count = sim(e.count, 10, 20);
+                    break;
+                case "Shards Fortress 5*":
+                    e.count = sim(e.count, 7, 18);
+                    break;
+                case "Shards Fortress 4*":
+                    e.count = sim(e.count, 10, 20);
+                    break;
+                case "Shards Light 5*":
+                    e.count = sim(e.count, 7, 15);
+                    break;
+                case "Shards Light 4*":
+                    e.count = sim(e.count, 10, 10);
+                    break;
+                case "Shards Dark 5*":
+                    e.count = sim(e.count, 7, 15);
+                    break;
+                case "Shards Dark 4*":
+                    e.count = sim(e.count, 10, 10);
+                    break;
+            }
+        });
+
+        return data;
+    }
+
     function genHTML(results) {
         function getImage(name) {
             var image;
-            heros.some(function(i) {
+            heros.some(function (i) {
                 if (i.name == name) {
                     image = i.image;
                     return;
@@ -854,7 +957,7 @@
 
             function getFaction(name) {
                 var faction;
-                heros.some(function(i) {
+                heros.some(function (i) {
                     if (i.name == name) {
                         faction = i.faction;
                         return;
@@ -875,9 +978,11 @@
                 return name.includes("Dark");
             }
             var HTML = "";
-            HTML = '<div class="avatar mx-auto"><img src="' + img + '" alt="' + name + '" title="' + name + '" class="img-avatar"><img src="images/hero/bag_piece.png" class="img-piece">';
+            HTML = '<div class="avatar mx-auto"><img src="' + img + '" alt="' + name + '" title="' + name +
+                '" class="img-avatar"><img src="images/hero/bag_piece.png" class="img-piece">';
             if (!getShards(name)) {
-                HTML += '<img src="images/hero/icon-' + getFaction(name).toLowerCase() + '.png" class="img-faction-icon">';
+                HTML += '<img src="images/hero/icon-' + getFaction(name).toLowerCase() +
+                    '.png" class="img-faction-icon">';
             } else if (getShards(name) && getLight(name)) {
                 HTML += '<img src="images/hero/icon-light.png" class="img-faction-icon">';
             } else if (getShards(name) && getDark(name)) {
@@ -898,9 +1003,12 @@
         function cleanName(name) {
             return name.replace(" 4*", "").replace(" 5*", "");
         }
-        HTML = "<div class=\"dialog-container\"><div class=\"dialog-title\">Rewards</div><div class=\"results\"><div class=\"row no-gutters\">";
-        results.forEach(function(i) {
-            HTML += ("<div class=\"col-6 col-md-2\">" + genImg(getImage(i.name), i.name) + "<i class=\"hero-amount\">" + i.count + "x </i><i class=\"hero-x\">" + cleanName(i.name) + "</i></div>");
+        HTML =
+            "<div class=\"dialog-container\"><div class=\"dialog-title\">Rewards</div><div class=\"results\"><div class=\"row no-gutters\">";
+        results.forEach(function (i) {
+            HTML += ("<div class=\"col-6 col-md-2\">" + genImg(getImage(i.name), i.name) +
+                "<i class=\"hero-amount\">" + i.count + "x </i><i class=\"hero-x\">" + cleanName(i.name) +
+                "</i></div>");
         });
         HTML += '</div></div></div>';
         return HTML;
@@ -908,13 +1016,13 @@
 
 
 
-    $(document).ready(function() {
-        $(".btn-close").click(function(e){
+    $(document).ready(function () {
+        $(".btn-close").click(function (e) {
             e.preventDefault();
             e.stopImmediatePropagation();
             $(".credits").toggleClass("d-none");
         });
-        $(".btn-faction").click(function(e) {
+        $(".btn-faction").click(function (e) {
             e.preventDefault();
             e.stopImmediatePropagation();
             $("#error").html("");
@@ -922,13 +1030,16 @@
             var results = [];
             var amount = $("#po-amount").val();
             if (amount < 1 || amount == "") {
-                $("#error").html('<div class="alert alert-danger alert-dismissible fade show" role="alert">You must enter an amount of prophet orbs to simulate!<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+                $("#error").html(
+                    '<div class="alert alert-danger alert-dismissible fade show" role="alert">You must enter an amount of prophet orbs to simulate!<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>'
+                    );
                 return;
             }
             for (var j = 0; j < amount; j++) {
                 results.push(simulate(faction));
             }
             results = countUniques(results);
+            results = simulateShards(results);
             $("#results").html(genHTML(results));
             $("#speech-text").html("Ready to Spend<br>More Money?");
             console.log(results);
@@ -945,7 +1056,7 @@
     }
 
     body {
-        background-color: #50b5e1!important;
+        background-color: #50b5e1 !important;
         font-family: "Idle" !important;
     }
 
@@ -959,7 +1070,7 @@
 
     .table {
         background-color: #dcc4a1;
-        color: #522814!important;
+        color: #522814 !important;
     }
 
     h1 {
@@ -973,14 +1084,14 @@
         border-top: 1px solid #ffecd5;
     }
 
-     ::placeholder {
-        color: #522814!important;
+    ::placeholder {
+        color: #522814 !important;
     }
 
     .form-control,
     .form-control:focus {
         background-color: transparent;
-        color: #522814!important;
+        color: #522814 !important;
         border: 10px solid transparent;
         border-image-source: url(images/herotask_task_bg.png);
         border-image-slice: 10 fill;
@@ -1190,7 +1301,8 @@
         font-size: 24px;
         text-align: center;
     }
-    .btn-close{
+
+    .btn-close {
         background-image: url(images/btn_close.png);
         position: absolute;
         background-repeat: no-repeat;
@@ -1200,16 +1312,18 @@
         height: 50px;
         width: 50px;
     }
-    .btn-close:hover{
+
+    .btn-close:hover {
         cursor: pointer;
     }
 
-    .credits a{
+    .credits a {
         color: #000;
     }
+
     .credits a:hover,
     .credits a:focus,
-    .credits a:active{
+    .credits a:active {
         color: #FFF;
         -webkit-filter: drop-shadow(1px 1px 0 black) drop-shadow(-1px -1px 0 black);
         filter: drop-shadow(1px 1px 0 black) drop-shadow(-1px -1px 0 black);
@@ -1227,10 +1341,13 @@
             <div class="small">Site &amp; Simulation:</div>
             <div class="zobris"><a href="http://zobris.duckdns.org" target="_blank">Zobris</a></div>
             <div class="small">Images &amp; Data:</div>
-            <div class="text-center"><a href="https://docs.google.com/spreadsheets/d/1uZvi69blL0zE-bN7PxE3sq1prhIncjQQ9LzpWA9ae6M" target="_blank">Samogot</a></div>
+            <div class="text-center"><a
+                    href="https://docs.google.com/spreadsheets/d/1uZvi69blL0zE-bN7PxE3sq1prhIncjQQ9LzpWA9ae6M"
+                    target="_blank">Samogot</a></div>
             <div class="small">Idle Heroes by DH Games:</div>
-            <a href="http://www.droidhang.com" target="_blank"><img src="images/bg1_part2.png" alt="" class="img-fluid"></a>
-            <div class="text-center text-muted small">Updated: 08/03/2019</div>
+            <a href="http://www.droidhang.com" target="_blank"><img src="images/bg1_part2.png" alt=""
+                    class="img-fluid"></a>
+            <div class="text-center text-muted small">Updated: 11/26/2019</div>
         </div>
     </div>
     <div class="container">
@@ -1245,16 +1362,24 @@
                                 <div class="col-12 offset-md-3 col-md-6">
                                     <div class="po-container">
                                         <img src="images/2101.png" class="img-po">
-                                        <input id="po-amount" type="number" min="0" class="form-control form-po" placeholder="Amount">
+                                        <input id="po-amount" type="number" min="0" class="form-control form-po"
+                                            placeholder="Amount">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-6 offset-md-1 col-md-2"><button class="btn btn-faction" data-faction="Forest"><img src="images/forest.png" alt="" class="img-faction"><span>Forest</span></button></div>
-                                <div class="col-6 col-md-2"><button class="btn btn-faction" data-faction="Fortress"><img src="images/castle2.png" alt="" class="img-faction">Fortress</button></div>
-                                <div class="col-6 col-md-2"><button class="btn btn-faction" data-faction="Shadow"><img src="images/dim.png" alt="" class="img-faction">Shadow</button></div>
-                                <div class="col-6 col-md-2"><button class="btn btn-faction" data-faction="Abyss"><img src="images/abyss.png" alt="" class="img-faction">Abyss</button></div>
-                                <div class="offset-3 col-6 offset-md-0 col-md-2" data-faction="Light/Dark"><button class="btn btn-faction"><img src="images/holyblack.png" alt="" class="img-faction">Light/Dark</button></div>
+                                <div class="col-6 offset-md-1 col-md-2"><button class="btn btn-faction"
+                                        data-faction="Forest"><img src="images/forest.png" alt=""
+                                            class="img-faction"><span>Forest</span></button></div>
+                                <div class="col-6 col-md-2"><button class="btn btn-faction" data-faction="Fortress"><img
+                                            src="images/castle2.png" alt="" class="img-faction">Fortress</button></div>
+                                <div class="col-6 col-md-2"><button class="btn btn-faction" data-faction="Shadow"><img
+                                            src="images/dim.png" alt="" class="img-faction">Shadow</button></div>
+                                <div class="col-6 col-md-2"><button class="btn btn-faction" data-faction="Abyss"><img
+                                            src="images/abyss.png" alt="" class="img-faction">Abyss</button></div>
+                                <div class="offset-3 col-6 offset-md-0 col-md-2" data-faction="Light/Dark"><button
+                                        class="btn btn-faction"><img src="images/holyblack.png" alt=""
+                                            class="img-faction">Light/Dark</button></div>
                             </div>
                         </div>
                     </div>
