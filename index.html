@@ -930,7 +930,7 @@
         return data;
     }
 
-    function simulateBlessings(data){
+    function simulateBlessings(amount){
         function randomInt(min, max) {
             min = Math.ceil(min);
             max = Math.floor(max);
@@ -944,7 +944,7 @@
             }
             return total;
         }
-        return sim(data.length, 10, 30);
+        return sim(amount, 10, 30);
     }
 
     function genHTML(results) {
@@ -1064,7 +1064,7 @@
             }
             results = countUniques(results);
             results = simulateShards(results);
-            results.push({name: "Prophet's Blessing", count: simulateBlessings(results)});
+            results.push({name: "Prophet's Blessing", count: simulateBlessings(amount)});
             console.log(results);
             $("#results").html(genHTML(results));
             $("#speech-text").html("Ready to Spend<br>More Money?");
