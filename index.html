@@ -679,7 +679,7 @@
             probability: 0.20,
             image: "images/hero/10021.png"
         }, {
-            name: "Shards Light 5*",
+            name: "Shards 5*",
             faction: "Light",
             probability: 0.14,
             image: "images/hero/10011.png"
@@ -748,7 +748,7 @@
             DARK
         -------------------------------------------------------------------------------------------------------------*/
         {
-            name: "Shards Dark 5*",
+            name: "Shards 5*",
             faction: "Dark",
             probability: 0.14,
             image: "images/hero/10011.png"
@@ -915,13 +915,10 @@
                 case "Shards Fortress 4*":
                     e.count = sim(e.count, 10, 20);
                     break;
-                case "Shards Light 5*":
-                    e.count = sim(e.count, 7, 15);
-                    break;
                 case "Shards Light 4*":
                     e.count = sim(e.count, 10, 10);
                     break;
-                case "Shards Dark 5*":
+                case "Shards 5*":
                     e.count = sim(e.count, 7, 15);
                     break;
                 case "Shards Dark 4*":
@@ -931,6 +928,23 @@
         });
 
         return data;
+    }
+
+    function simulateBlessings(data){
+        function randomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function sim(count, min, max) {
+            var total = 0;
+            for (var i = 0; i < count; i++) {
+                total +=randomInt(min, max);
+            }
+            return total;
+        }
+        return sim(data.length, 10, 30);
     }
 
     function genHTML(results) {
@@ -979,13 +993,17 @@
             }
             var HTML = "";
             HTML = '<div class="avatar mx-auto"><img src="' + img + '" alt="' + name + '" title="' + name +
-                '" class="img-avatar"><img src="images/hero/bag_piece.png" class="img-piece">';
+                '" class="img-avatar">';
+            if(name.includes("Shards")){
+                HTML += '<img src="images/hero/bag_piece.png" class="img-piece">';
+            }
             if (!getShards(name)) {
                 HTML += '<img src="images/hero/icon-' + getFaction(name).toLowerCase() +
                     '.png" class="img-faction-icon">';
-            } else if (getShards(name) && getLight(name)) {
+            } else if (getShards(name) && getLight(name) && !name.includes("5*")) {
+
                 HTML += '<img src="images/hero/icon-light.png" class="img-faction-icon">';
-            } else if (getShards(name) && getDark(name)) {
+            } else if (getShards(name) && getDark(name) && !name.includes("5*")) {
                 HTML += '<img src="images/hero/icon-dark.png" class="img-faction-icon">';
             }
             HTML += '<div class="';
@@ -1006,9 +1024,15 @@
         HTML =
             "<div class=\"dialog-container\"><div class=\"dialog-title\">Rewards</div><div class=\"results\"><div class=\"row no-gutters\">";
         results.forEach(function (i) {
+            if(i.name == "Prophet's Blessing"){
+                HTML += ("<div class=\"col-6 col-md-2\">" + '<div class="avatar mx-auto"><img src="images/2201.png"alt="Prophets Blessing" title="Prophets Blessing" class="img-avatar"></div>' +
+                    "<i class=\"hero-amount\">" + i.count + "x </i><i class=\"hero-x\">" + cleanName(i.name) +
+                        "</i></div>");
+            }else{
             HTML += ("<div class=\"col-6 col-md-2\">" + genImg(getImage(i.name), i.name) +
                 "<i class=\"hero-amount\">" + i.count + "x </i><i class=\"hero-x\">" + cleanName(i.name) +
                 "</i></div>");
+            }
         });
         HTML += '</div></div></div>';
         return HTML;
@@ -1040,9 +1064,10 @@
             }
             results = countUniques(results);
             results = simulateShards(results);
+            results.push({name: "Prophet's Blessing", count: simulateBlessings(results)});
+            console.log(results);
             $("#results").html(genHTML(results));
             $("#speech-text").html("Ready to Spend<br>More Money?");
-            console.log(results);
             console.log("Finished Simulating");
         });
 
